@@ -117,21 +117,23 @@
 			$scope.initLogoAnimations();
 			$scope.initKeyControl();
 			
-			if ($state.current.name == 'yabu' || $state.current.name == 'kcalb') {
-				$scope.modal = {
-					slug: $state.current.data.slug,
-					name: $state.current.data.name,
-					wp: $state.current.data.wp,
-					ghost: $state.current.data.ghost,
-					demo: $state.current.data.demo,
-					show: false
-				};
-				$scope.setupIframe();
-			}
-			
 			$timeout(function() {
 				$scope.$parent.inTransition = false;
 			}, 320);
+			
+			$timeout(function() {
+				if ($state.current.name == 'yabu' || $state.current.name == 'kcalb') {
+					$scope.modal = {
+						slug: $state.current.data.slug,
+						name: $state.current.data.name,
+						wp: $state.current.data.wp,
+						ghost: $state.current.data.ghost,
+						demo: $state.current.data.demo,
+						show: false
+					};
+					$scope.setupIframe();
+				}
+			}, 500);
 			
 		};
 		

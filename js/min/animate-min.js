@@ -1,0 +1,1 @@
+!function($){angular.module("rakugaki").animation(".viewport",[function(){return{enter:function(element,doneFn){jQuery(element).fadeIn(1e3,doneFn)},move:function(element,doneFn){jQuery(element).fadeIn(1e3,doneFn)},leave:function(element,doneFn){jQuery(element).fadeOut(1e3,doneFn)}}}])}(jQuery,angular);

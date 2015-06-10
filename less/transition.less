@@ -7,25 +7,45 @@
   bottom: 0;
   top: 0;
   width: 100%; 
+  height: 100%;
+  transition: all 0.32s ease;
 }
 
-.ng-enter { 
-	animation: fadeIn 0.32s both ease-in; 
+
+.viewport.ng-leave {
 	
 	&.next {
-		animation: slideInRight 0.26s both ease-in;
+		left: 0;
 	}
 	&.prev {
-		animation: slideInLeft 0.26s both ease-in;
+		left: 0;
 	}
 }
-.ng-leave { 
-	animation: fadeOut 0.32s both ease-in;
+.viewport.ng-leave.ng-leave-active { 
 	
 	&.next {
-		animation: slideOutLeft 0.26s both ease-in;
+		left: -100%;
 	}
 	&.prev {
-		animation: slideOutRight 0.26s both ease-in;
+		left: 100%;
 	}
 }
+.viewport.ng-enter {
+	
+	&.next {
+		left: 100%;
+	}
+	&.prev {
+		left: -100%;
+	}
+}
+.viewport.ng-enter.ng-enter-active { 
+	
+	&.next {
+		left: 0;
+	}
+	&.prev {
+		left: 0;
+	}
+}
+
