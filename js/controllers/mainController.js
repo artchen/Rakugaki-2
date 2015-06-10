@@ -14,7 +14,6 @@
 
 		$scope.currentSlide = 0;
 		$scope.numSlides = $scope.slides.length;
-		$scope.selector = {};
 		$scope.transitionAnimation = 'init';
 		$scope.swipeDisabled = false; //deprecared
 		$scope.keyDisabled = false; //deprecared
@@ -129,18 +128,6 @@
 			
 		};
 		
-		/**
-		 *	initialize jQuery selector
-		 */
-		$scope.initSelector = function(callback) {
-			$scope.selector = {
-				container: $('#st-container'),
-				sidebarTrigger: $('.nav-trigger')
-			};
-			if (callback) {
-				callback();
-			}
-		};
 
 		/**
 		 *	slide right to reveal sidebar menu
@@ -148,8 +135,8 @@
 		$scope.openSidebar = function(ev) {
 			ev.stopPropagation();
       ev.preventDefault();
-      $scope.selector.sidebarTrigger.fadeOut();
-      $scope.selector.container.className = 'st-container';
+      $('.nav-trigger').fadeOut();
+      $('#st-container').className = 'st-container';
 			
 			$timeout(function() {
 				$scope.sidebarShown = true;
@@ -165,7 +152,7 @@
 			if ($scope.sidebarShown) {
 				$scope.sidebarShown = false;
 				$timeout(function(){
-					$scope.selector.sidebarTrigger.fadeIn();
+					$('.nav-trigger').fadeIn();
 	      }, 500);
 			}
 			if ($scope.slideIndexShown) {
@@ -280,12 +267,13 @@
 		$scope.init = function() {
 
 			$timeout(function() {
-				$scope.initSelector(function() {
-					$scope.initTapAnime();
-					$scope.initPerfectScrollbar();
-					$scope.onClickEvents();
+				$scope.initTapAnime();
+				$scope.initPerfectScrollbar();
+				$scope.onClickEvents();
+				
+				$timeout(function() {
 					$scope.loaded = true;
-				});
+				}, 100);
 			}, 1);
 			
 		};
