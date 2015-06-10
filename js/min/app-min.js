@@ -1,0 +1,1 @@
+!function($){var u=angular.module("rakugaki",["ngAnimate","ngTouch","ui.router"])}(jQuery,angular);

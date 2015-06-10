@@ -1,0 +1,31 @@
+// main: style.less
+
+/* Slide Transitions */
+
+.viewport {
+	position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%; 
+}
+
+.ng-enter { 
+	animation: fadeIn 0.32s both ease-in; 
+	
+	&.next {
+		animation: slideInRight 0.26s both ease-in;
+	}
+	&.prev {
+		animation: slideInLeft 0.26s both ease-in;
+	}
+}
+.ng-leave { 
+	animation: fadeOut 0.32s both ease-in;
+	
+	&.next {
+		animation: slideOutLeft 0.26s both ease-in;
+	}
+	&.prev {
+		animation: slideOutRight 0.26s both ease-in;
+	}
+}

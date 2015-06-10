@@ -1,0 +1,1 @@
+!function($){angular.module("rakugaki").controller("SlideController",["$scope","$timeout",function(o,l){}])}(jQuery,angular);
