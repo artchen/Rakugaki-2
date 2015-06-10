@@ -13,6 +13,7 @@
 
 
 .viewport.ng-leave {
+	opacity: 1;
 	
 	&.next {
 		left: 0;
@@ -22,6 +23,7 @@
 	}
 }
 .viewport.ng-leave.ng-leave-active { 
+	opacity: 0;
 	
 	&.next {
 		left: -100%;
@@ -31,6 +33,7 @@
 	}
 }
 .viewport.ng-enter {
+	opacity: 0;
 	
 	&.next {
 		left: 100%;
@@ -40,6 +43,7 @@
 	}
 }
 .viewport.ng-enter.ng-enter-active { 
+	opacity: 1;
 	
 	&.next {
 		left: 0;

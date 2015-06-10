@@ -39,7 +39,7 @@
 		    }
 		  })
 		  .state('kcalb', {
-		    url: "/kcalb",
+		    url: "/theme-kcalb",
 		    templateUrl: "/views/kcalb.html",
 		    controller: "SlideController",
 		    data: { 
@@ -53,7 +53,7 @@
 		    }
 		  })
 		  .state('yabu', {
-		    url: "/yabu",
+		    url: "/theme-yabu",
 		    templateUrl: "/views/yabu.html",
 		    controller: "SlideController",
 		    data: { 

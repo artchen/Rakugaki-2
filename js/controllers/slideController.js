@@ -13,6 +13,7 @@
 		};
 		
 		$scope.iframeSource = "";
+		$scope.iframeSetip = false;
 		
 		/**
 		 *	show modal
@@ -21,6 +22,10 @@
 			$scope.$parent.modalShown = true;
 			$(".slide-nav, .info-trigger, .nav-trigger").fadeOut();
       $scope.modal.show = true;
+      $timeout(function() {
+	      $scope.setupIframe();
+      }, 320);
+      
 		};
 		
 		/**
@@ -102,6 +107,8 @@
 		 *	setup iframe secure url
 		 */
 		$scope.setupIframe = function() {
+			if ($scope.iframeSetup) return;
+			$scope.iframeSetup = true;
       $scope.iframeSource = $sce.trustAsResourceUrl($scope.modal.demo);
     }
 
@@ -131,7 +138,6 @@
 						demo: $state.current.data.demo,
 						show: false
 					};
-					$scope.setupIframe();
 				}
 			}, 500);
 			
