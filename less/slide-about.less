@@ -3,8 +3,17 @@
 /* Slide: About */
 
 /* === About === */
-#about {
-  background: url(img/linen.jpg) repeat;
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  #universe #about {
+	  background: url(img/linen@2x.jpg) #333 repeat;
+  }
+}
+
+#universe #about {
+  background: url(img/linen@2x.jpg) #333 repeat;
+  
   .namecard {
     width: 300px;
     height: 300px;
@@ -17,6 +26,7 @@
     overflow: visible;
     z-index: 11;
     text-shadow: 0 0 1px rgba(0,0,0,0.2);
+    
     .view-resume-small {
       display: none;
       bottom: 30px;
@@ -30,6 +40,13 @@
       height: 40px;
       left: 100px;
       line-height: 38px;
+      
+      &:hover {
+	      color: rgba(255,255,255, 1);
+	      border-color: rgba(255,255,255,0.6);
+	      background-color: rgba(0,0,0,0.3);
+	    }
+
     }
     .view-resume,
     .view-resume-small {
@@ -44,12 +61,7 @@
       transition: background-color 0.3s, border-color 0.3s, color 0.3s;
       z-index: 12;
     }
-    .view-resume:hover {
-      color: rgba(255,255,255, 1);
-      border-color: rgba(255,255,255,0.6);
-      background-color: rgba(0,0,0,0.3);
-    }
-  }
+	}
   .namecard::before {
     content: "";
     display: block;

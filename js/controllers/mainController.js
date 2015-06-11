@@ -188,15 +188,6 @@
 		};
 		
 		/**
-		 *	register all jQuery onclick events
-		 */
-		$scope.onClickEvents = function() {
-			$('.close-info-window').on('click', function() {
-				$scope.closeInfoWindow();
-			});
-		};
-		
-		/**
 		 *	tap ripple animation	
 		 */
 		$scope.tapAnime = function(tap_xpos, tap_ypos) {
@@ -264,17 +255,16 @@
 			$scope.currentSlide = $state.current.data.index;
 		});
 		
+		$scope.$on('$includeContentLoaded', function () {
+				$scope.initPerfectScrollbar();
+		});
+		
 		$scope.init = function() {
 
 			$timeout(function() {
 				$scope.initTapAnime();
-				$scope.initPerfectScrollbar();
-				$scope.onClickEvents();
-				
-				$timeout(function() {
-					$scope.loaded = true;
-				}, 100);
-			}, 1);
+				$scope.loaded = true;
+			}, 100);
 			
 		};
 		

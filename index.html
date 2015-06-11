@@ -38,20 +38,20 @@
 		<div id="st-container" class="st-container" ng-class="{'st-menu-open': sidebarShown}">
 			
 			<nav class="st-menu st-effect-2" ng-click="prenventPropagation($event)">
-        <div static-include="sidebar.html"></div>
+        <ng-include src="'sidebar.html'"></ng-include>
       </nav>
       
       <div class="st-pusher" ng-click="closeSidebar($event)">
         <div class="st-content">
 					
-					<div static-include="menu.html"></div>
+					<ng-include src="'menu.html'"></ng-include>
 					
-					<div static-include="views/info-welcome.html"></div>
-					<div static-include="views/info-springtide.html"></div>
-					<div static-include="views/info-shiro.html"></div>
-					<div static-include="views/info-kcalb.html"></div>
-					<div static-include="views/info-yabu.html"></div>
-					<div static-include="views/info-about.html"></div>
+					<ng-include src="'views/info-welcome.html'"></ng-include>
+					<ng-include src="'views/info-springtide.html'"></ng-include>
+					<ng-include src="'views/info-shiro.html'"></ng-include>
+					<ng-include src="'views/info-kcalb.html'"></ng-include>
+					<ng-include src="'views/info-yabu.html'"></ng-include>
+					<ng-include src="'views/info-about.html'"></ng-include>
 					
 						
 					<div class="viewport" ng-class="transitionAnimation" ui-view></div>

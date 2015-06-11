@@ -9,12 +9,14 @@
   }
 }
 @media only screen and (max-width: 940px) {
+	/*
   #about .namecard .view-resume-small {
     display: block;
   }
   #about .namecard .view-resume {
     display: none;
   }
+  */
 }
 @media only screen and (max-height: 400px) {
   #welcome #site-logo {
@@ -79,9 +81,13 @@
   .slide-nav .trigger {
     width: 36px;
   }
-  .slide-nav .trigger span {
+  .slide-nav .trigger span,
+  .slide-nav .trigger.nav span {
     line-height: 36px;
     font-size: 0.875em;
+  }
+  .slide-nav .trigger.nav span {
+	  font-size: 1em;
   }
   .slide-index {
     display: none;
@@ -152,9 +158,13 @@
   .slide-nav .trigger {
     width: 36px;
   }
-  .slide-nav .trigger span {
+  .slide-nav .trigger span,
+  .slide-nav .trigger.nav span {
     line-height: 36px;
     font-size: 0.875em;
+  }
+  .slide-nav .trigger.nav span {
+		font-size: 1em;
   }
   .works-info {
     top: 47px;
@@ -201,15 +211,13 @@
     margin-top: 15px;
     font-size: 1.125em;
   }
-  #about .namecard .view-resume-small {
+  
+  #about .namecard .view-resume {
     display: block;
     bottom: 25px;
     height: 30px;
     line-height: 28px;
     left: 75px;
-  }
-  #about .namecard .view-resume {
-    display: none;
   }
   .slide-index {
     display: none;
