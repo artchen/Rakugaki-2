@@ -28,7 +28,7 @@
   <ul>
     <li ng-repeat="s in slides track by $index"
     	ng-class="{'list-end': ($index == (slides.length - 1)) }">
-    	<a ng-click="gotoSlide(s.state)">{{s.name}}</a>
+    	<a ng-click="gotoSlide(s.state, $event)">{{s.name}}</a>
     </li>
   </ul>
 </div>

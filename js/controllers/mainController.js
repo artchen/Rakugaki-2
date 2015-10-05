@@ -1,6 +1,6 @@
 (function($){
 	
-	angular.module('rakugaki').controller('MainController', ['$rootScope', '$scope', '$timeout', '$state', '$stateParams', function($rootScope, $scope, $timeout, $state, $stateParams) {
+	angular.module('rakugaki').controller('MainController', function($rootScope, $scope, $timeout, $state, $stateParams, $window) {
 		
 		$scope.loaded = false;
 		$scope.slides = [
@@ -46,19 +46,19 @@
 		/**
 		 *	directly go to a slide
 		 */
-		$scope.gotoSlide = function(slide) {
+		$scope.gotoSlide = function(slide, $event) {
 			if ($scope.modalShown || $scope.inTransition) {
 				return;
 			}
 			if ($state.$current.name == slide) {
 				$scope.closeInfoWindow();
-				$scope.closePopup(event);
+				$scope.closePopup($event);
 				return;
 			}
 			
 			$scope.inTransition = true;
 			$scope.closeInfoWindow();
-			$scope.closePopup(event);
+			$scope.closePopup($event);
 			$scope.safeApply(function() {
 				if ($scope.transitionAnimation != 'init')
 					$scope.transitionAnimation = "init";
@@ -132,9 +132,9 @@
 		/**
 		 *	slide right to reveal sidebar menu
 		 */
-		$scope.openSidebar = function(ev) {
-			ev.stopPropagation();
-      ev.preventDefault();
+		$scope.openSidebar = function($event) {
+			$event.stopPropagation();
+      $event.preventDefault();
       $('.nav-trigger').fadeOut();
       $('#st-container').className = 'st-container';
 			
@@ -146,8 +146,8 @@
 		/**
 		 *	close sidebar and all popup window
 		 */
-		$scope.closePopup = function(ev) {
-			ev.stopPropagation();
+		$scope.closePopup = function($event) {
+			$event.stopPropagation();
 
 			if ($scope.sidebarShown) {
 				$scope.sidebarShown = false;
@@ -165,8 +165,8 @@
 		/**
 		 *	prevent propagation
 		 */
-		$scope.prenventPropagation = function(ev) {
-      ev.stopPropagation();
+		$scope.prenventPropagation = function($event) {
+      $event.stopPropagation();
 		};
 		
 		/**
@@ -213,16 +213,16 @@
 		 *	initialize tap ripple animation	
 		 */
 		$scope.initTapAnime = function() {
-      $(".st-pusher, .trigger, .md-trigger, .md-modal").on("click", function(event) {
-        $scope.tapAnime(event.pageX, event.pageY);
+      $(".st-pusher, .trigger, .md-trigger, .md-modal").on("click", function($event) {
+        $scope.tapAnime($event.pageX, $event.pageY);
       });
 		};
 		
 		/**
 		 *	open slide index popup
 		 */
-		$scope.openSlideIndex = function(event) {
-			event.stopPropagation();
+		$scope.openSlideIndex = function($event) {
+			$event.stopPropagation();
 			$scope.slideIndexShown = true;
 			$('.slide-index').fadeIn();
 			$scope.closeInfoWindow();
@@ -270,5 +270,5 @@
 		
 		$scope.init();
 	
-	}]);
+	});
 })(jQuery, angular);

@@ -1,12 +1,12 @@
 <ul class="side-menu">
   <li>
-    <a ng-click="gotoSlide('welcome')" class="cf">
+    <a ng-click="gotoSlide('welcome', $event)" class="cf">
       <span class="menu-icon icon-home3"></span>
       <span class="menu-text">Home</span>
     </a>
   </li>
   <li class="menu-avatar">
-    <a ng-click="gotoSlide('about')" class="special-anchor-direct cf menu-about">
+    <a ng-click="gotoSlide('about', $event)" class="special-anchor-direct cf menu-about">
       <span class="menu-avatar-pic"></span>
       <span class="menu-text">Art Chen</span>
     </a>
@@ -25,6 +25,7 @@
       <span class="lang-label">EN</span>
     </a>
   </li>
+  <!--
   <li class="menu-site">
     <a href="http://gitchen.me" class="cf" target="_blank">
       <span class="menu-icon icon-embed"></span>
@@ -32,4 +33,5 @@
       <span class="lang-label">EN</span>
     </a>   
   </li>
+  -->
 </ul>
