@@ -2,7 +2,7 @@
 	
 	/* Slide */
 	
-	angular.module('rakugaki').controller('SlideController', ['$rootScope', '$scope', '$timeout', '$state', '$stateParams', '$sce', function($rootScope, $scope, $timeout, $state, $stateParams, $sce) {
+	angular.module('rakugaki').controller('SlideController', function($rootScope, $scope, $timeout, $state, $stateParams, $sce) {
 		
 		$scope.modal = {
 			slug: "",
@@ -144,19 +144,7 @@
 		};
 		
 		$scope.init();
-		
-		/**
-		 *	do something on state change success
-		 */
-		$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-			//$scope.$parent.transitionAnimation = 'init';
-			
-		});
-		
-		
-
-		
 	
-	}]);
+	});
 	
 })(jQuery, angular);
